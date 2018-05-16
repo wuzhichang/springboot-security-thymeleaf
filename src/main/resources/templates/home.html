@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>
+        欢迎登录<span sec:authentication="principal.username" style="color: red;"></span>
+    </h1> <a th:href="@{/logout}">退出</a>
+    <a sec:authorize="hasAuthority('test')" th:href="@{/test}" th:text="测试"></a>
+    <a sec:authorize="hasAuthority('bb')" th:href="@{/test}" th:text="bb"></a>
+</body>
+</html>

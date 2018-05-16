@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>登录页面</title>
+    </head>
+<body>
+    <h2>自定义登录页面</h2>
+    <form action="/login"  method="post">
+        <table>
+            <tr>
+                <td th:if="${error}" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}" style="color: red;"></td>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">登录</button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="/javaScripts/jquery.min.js" type="text/javascript"></script>
+    <script th:inline="javascript">
+        jQuery(document).ready(function() {
+
+            /*<![CDATA[*/
+
+            // if(menuId != null && menuId != ""){
+            //     var $menu = $("#"+ menuId).parent();
+            //     var $ul = $menu.parent();
+            //     var $li = $ul.parent();
+            //     $li.prop("class", "start open");
+            //     $li.find(".arrow").prop("class", "arrow open");
+            //     $ul.prop("style", "display: block;");
+            //     $menu.prop("class", "active");
+            // }
+            //
+            // //瞬时消息
+            // var flashMessage = [[${flashMessage}]];
+            // if(flashMessage != null && flashMessage != ""){
+            //     var type = flashMessage.messageType;
+            //     var content = flashMessage.content;
+            //     $.message(type, content);
+            // }
+            /*]]>*/
+        });
+    </script>
+</body>
+</html>
